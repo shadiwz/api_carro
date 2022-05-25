@@ -12,15 +12,19 @@ namespace ListaCarro
 
         public string Model { get; set; }
 
+        public double Pice { get; set; }
+
+        public int Discount { get; set; }
+
         public int Year { get; set; }
 
         public double Mileage { get; set; }
 
-        public enum Color
-        {
-            Branco,
-            Prata,
-            Preto
-        } 
     }
+    public enum Color
+    {
+        Branco,
+        Prata,
+        Preto
+    } 
 }

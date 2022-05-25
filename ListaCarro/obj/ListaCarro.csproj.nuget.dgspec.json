@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PICHAU\\source\\repos\\ListaCarro\\api_carro\\ListaCarro\\ListaCarro.csproj": {}
+    "C:\\Users\\muril\\source\\repos\\api_carro\\ListaCarro\\ListaCarro.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PICHAU\\source\\repos\\ListaCarro\\api_carro\\ListaCarro\\ListaCarro.csproj": {
+    "C:\\Users\\muril\\source\\repos\\api_carro\\ListaCarro\\ListaCarro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PICHAU\\source\\repos\\ListaCarro\\api_carro\\ListaCarro\\ListaCarro.csproj",
+        "projectUniqueName": "C:\\Users\\muril\\source\\repos\\api_carro\\ListaCarro\\ListaCarro.csproj",
         "projectName": "ListaCarro",
-        "projectPath": "C:\\Users\\PICHAU\\source\\repos\\ListaCarro\\api_carro\\ListaCarro\\ListaCarro.csproj",
-        "packagesPath": "C:\\Users\\PICHAU\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PICHAU\\source\\repos\\ListaCarro\\api_carro\\ListaCarro\\obj\\",
+        "projectPath": "C:\\Users\\muril\\source\\repos\\api_carro\\ListaCarro\\ListaCarro.csproj",
+        "packagesPath": "C:\\Users\\muril\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\muril\\source\\repos\\api_carro\\ListaCarro\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PICHAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\muril\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
