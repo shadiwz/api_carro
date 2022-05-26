@@ -4,10 +4,10 @@ namespace ListaCarro.Service
 {
     public interface ICarroService
     {
-        List<Carro> Get();
-        Carro Get(string id);
-        Carro Create(Carro carro);
-        long Update(string id, Carro carro);
+        List<Car> Get();
+        Car Get(string id);
+        Car Create(Car carro);
+        long Update(string id, Car carro);
         long Remove(string id);
     }
 }

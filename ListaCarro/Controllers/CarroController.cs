@@ -20,20 +20,20 @@ namespace ListaCarro.Controllers
         }
 
         [HttpPost]
-        public Carro Post(Carro carro)
+        public Car Post(Car carro)
         {
             var carroResult = _carroService.Create(carro);
             return carroResult;
         }
         
         [HttpGet]
-        public List<Carro> Get()
+        public List<Car> Get()
         {
             return _carroService.Get();
         }
         [HttpGet]
         [Route("{carroId}")]
-        public Carro GetById(string carroId)
+        public Car GetById(string carroId)
         {
             return _carroService.Get(carroId);
         }
@@ -45,7 +45,7 @@ namespace ListaCarro.Controllers
         }
         [HttpPut]
         [Route("{carroId}")]
-        public long UpdateById(string carroId, [FromBody] Carro carro)
+        public long UpdateById(string carroId, [FromBody] Car carro)
         {
             return _carroService.Update(carroId, carro);
         }

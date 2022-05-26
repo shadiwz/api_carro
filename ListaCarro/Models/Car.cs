@@ -4,7 +4,7 @@ using System;
 
 namespace ListaCarro
 {
-    public class Carro
+    public class Car
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]

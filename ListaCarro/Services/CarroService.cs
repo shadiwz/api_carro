@@ -5,33 +5,33 @@ namespace ListaCarro.Service
 {
     public class CarroService : ICarroService
     {
-        private readonly IMongoCollection<Carro> _carro;
+        private readonly IMongoCollection<Car> _carro;
 
         public CarroService(IDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
-            _carro = database.GetCollection<Carro>(settings.CollectionName);
+            _carro = database.GetCollection<Car>(settings.CollectionName);
         }
-        public List<Carro> Get()
+        public List<Car> Get()
         {
             return _carro.Find(carro => true).ToList();
         }
-        public Carro Get(string id)
+        public Car Get(string id)
         {
-            return _carro.Find<Carro>(carro => carro.Id == id).FirstOrDefault();
+            return _carro.Find<Car>(carro => carro.Id == id).FirstOrDefault();
         }
-        public Carro Create(Carro carro)
+        public Car Create(Car carro)
         {
             _carro.InsertOne(carro);
             return carro;
         }
-        public long Update(string id, Carro carroIn)
+        public long Update(string id, Car carroIn)
         {
             return _carro.ReplaceOne(carro => carro.Id == id, carroIn).ModifiedCount;
         }
-        public void Remove(Carro carroIn)
+        public void Remove(Car carroIn)
         {
             _carro.DeleteOne(carro => carro.Id == carroIn.Id);
         }
