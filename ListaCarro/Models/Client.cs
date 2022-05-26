@@ -12,6 +12,6 @@ namespace ListaCarro.Models
         public string CPF { get; set; }
         public double Wallet { get; set; }
         public List<Dealership> Dealerships { get; set; }
-        public List<Carro> Carros { get; set; } 
+        public List<Car> Cars { get; set; } 
     }
 }
