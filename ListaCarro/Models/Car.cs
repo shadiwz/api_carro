@@ -21,8 +21,9 @@ namespace ListaCarro
 
         public double Mileage { get; set; }
 
-        public Client Buyer { get; set; }
+        public string Buyer { get; set; }
 
+        public Color Color { get; set; }    
     }
     public enum Color
     {
