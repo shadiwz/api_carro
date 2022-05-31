@@ -31,13 +31,10 @@ namespace ListaCarro.Service
         {
             return _carro.ReplaceOne(carro => carro.Id == id, carroIn).ModifiedCount;
         }
-        public void Remove(Car carroIn)
-        {
-            _carro.DeleteOne(carro => carro.Id == carroIn.Id);
-        }
+       
         public long Remove(string id)
         {
-            var carro = _carro.DeleteOne(anime => anime.Id == id);
+            var carro = _carro.DeleteOne(carro => carro.Id == id);
             return carro.DeletedCount;
         }
     }
