@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace ListaCarro.Controllers
 {
     [ApiController]
-    [Route("ListaCarro")]
+    [Route("dealership")]
     public class DealershipController : ControllerBase
     {
         private IDealershipService _dealershipService;
@@ -30,21 +30,21 @@ namespace ListaCarro.Controllers
         }
 
         [HttpGet]
-        [Route("dealershipId")]
+        [Route("{dealershipId}")]
         public Dealership GetById(string dealershipId)
         {
             return _dealershipService.Get(dealershipId);
         }
 
         [HttpDelete]
-        [Route("dealershipId")]
+        [Route("{dealershipId}")]
         public long DeleteById(string dealershipId) 
         {
             return _dealershipService.Delete(dealershipId);
         }
 
         [HttpPut]
-        [Route("dealershipId")]
+        [Route("{dealershipId}")]
         public long UpdateById(string dealershipId, [FromBody] Dealership dealership)
         {
             return _dealershipService.Update(dealershipId, dealership);

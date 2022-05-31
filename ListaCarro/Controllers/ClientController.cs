@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace ListaCarro.Controllers
 {
     [ApiController]
-    [Route("ListaCarro")]    
+    [Route("client")]    
     public class ClientController : ControllerBase
     {
         private IClientService _clientService;
@@ -23,7 +23,7 @@ namespace ListaCarro.Controllers
         }
         
         [HttpGet]
-        [Route("clientId")]
+        [Route("{clientId}")]
         public Client GetById(string clientId) 
         { 
             return _clientService.Get(clientId);
@@ -36,14 +36,14 @@ namespace ListaCarro.Controllers
         }
 
         [HttpDelete]
-        [Route("cientId")]
+        [Route("{clientId}")]
         public long DeleteById(string clientId) 
         { 
             return _clientService.Delete(clientId); 
         }
 
         [HttpPut]
-        [Route("clientId")]
+        [Route("{clientId}")]
         public long UpdateById(string clientId, [FromBody] Client client) 
         {
             return _clientService.Update(clientId, client); 
