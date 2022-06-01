@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ListaCarro.Controllers
@@ -20,7 +21,7 @@ namespace ListaCarro.Controllers
         }
 
         [HttpPost]
-        public Car Post(Car carro)
+        public HttpResponseMessage Post(Car carro)
         {
             var carroResult = _carroService.Create(carro);
             return carroResult;

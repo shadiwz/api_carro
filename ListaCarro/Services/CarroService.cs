@@ -1,5 +1,8 @@
 using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 
 namespace ListaCarro.Service
 {
@@ -22,10 +25,29 @@ namespace ListaCarro.Service
         {
             return _carro.Find<Car>(carro => carro.Id == id).FirstOrDefault();
         }
-        public Car Create(Car carro)
+        public HttpResponseMessage Create(Car carro)
         {
-            _carro.InsertOne(carro);
-            return carro;
+            var content = new HttpResponseMessage();
+            try
+            {
+                if(carro == null)
+                {
+                    content.StatusCode = HttpStatusCode.BadRequest;
+                    content.Content = new StringContent("Carro can't be null");
+                }
+                if(carro.Year < 2002)
+                {
+                    content.StatusCode = HttpStatusCode.BadRequest;
+                    content.Content = new StringContent("Car not accepted");
+                }
+
+                _carro.InsertOne(carro);
+                return content;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public long Update(string id, Car carroIn)
         {

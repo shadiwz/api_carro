@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Net.Http;
 
 namespace ListaCarro.Service
 {
@@ -6,7 +7,7 @@ namespace ListaCarro.Service
     {
         List<Car> Get();
         Car Get(string id);
-        Car Create(Car carro);
+        HttpResponseMessage Create(Car carro);
         long Update(string id, Car carro);
         long Remove(string id);
     }
