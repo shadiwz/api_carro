@@ -14,7 +14,7 @@ namespace ListaCarro.Services
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
-            _client = database.GetCollection<Client>(settings.CollectionName);
+            _client = database.GetCollection<Client>("client");
         }
 
         public List<Client> GetAll()
