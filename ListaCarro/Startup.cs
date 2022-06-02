@@ -1,4 +1,6 @@
+using ListaCarro.Interface;
 using ListaCarro.Service;
+using ListaCarro.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +31,8 @@ namespace ListaCarro
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ICarroService, CarroService>();
+            services.AddSingleton<IClientService, ClientService>();
+            services.AddSingleton<IDealershipService, DealershipService>();
 
             services.AddSingleton<IDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
