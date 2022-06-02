@@ -33,7 +33,7 @@ namespace ListaCarro.Service
                 if(carro == null)
                 {
                     content.StatusCode = HttpStatusCode.BadRequest;
-                    content.Content = new StringContent("Carro can't be null");
+                    throw new Exception("Car can't be null");
                 }
                 if(carro.Year < 2002)
                 {
