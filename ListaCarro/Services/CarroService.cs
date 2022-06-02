@@ -38,7 +38,13 @@ namespace ListaCarro.Service
                 if(carro.Year < 2002)
                 {
                     content.StatusCode = HttpStatusCode.BadRequest;
-                    content.Content = new StringContent("Car not accepted");
+                    throw new Exception("Car not accept");
+                }
+
+                if(carro.Mileage >= 1000.00)
+                {
+                    content.StatusCode = HttpStatusCode.BadRequest;
+                    throw new Exception("Car used more than allowed");
                 }
 
                 _carro.InsertOne(carro);
