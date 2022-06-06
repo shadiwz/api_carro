@@ -33,6 +33,7 @@ namespace ListaCarro
             services.AddSingleton<ICarroService, CarroService>();
             services.AddSingleton<IClientService, ClientService>();
             services.AddSingleton<IDealershipService, DealershipService>();
+            services.AddSingleton<IDealService, DealService>();
 
             services.AddSingleton<IDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
