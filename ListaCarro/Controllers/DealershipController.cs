@@ -2,6 +2,7 @@
 using ListaCarro.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Net.Http;
 
 namespace ListaCarro.Controllers
 {
@@ -48,6 +49,13 @@ namespace ListaCarro.Controllers
         public long UpdateById(string dealershipId, [FromBody] Dealership dealership)
         {
             return _dealershipService.Update(dealershipId, dealership);
+        }
+
+        [HttpPost]
+        [Route("client")]
+        public HttpResponseMessage Register(string id, string clientId)
+        {
+            return _dealershipService.Register(id, clientId);
         }
     }
 }

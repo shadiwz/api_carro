@@ -2,18 +2,22 @@
 using ListaCarro.Models;
 using MongoDB.Driver;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 
 namespace ListaCarro.Services
 {
     public class DealershipService : IDealershipService
     {
         private readonly IMongoCollection<Dealership> _dealership;
+        private readonly IClientService _clientService;
 
         public DealershipService(IDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
+            _clientService = new ClientService(settings);
             _dealership = database.GetCollection<Dealership>("dealership");
         }
 
@@ -43,6 +47,22 @@ namespace ListaCarro.Services
         public long Update(string id, Dealership dealership)
         {
             return _dealership.ReplaceOne(dealership => dealership.Id == id, dealership).ModifiedCount;
+        }
+
+        public HttpResponseMessage Register(string id, string clientId)
+        { 
+            var content = new HttpResponseMessage();
+            var clientSearch = _clientService.Get(clientId);
+            var dealershipSearch = Get(id);
+
+            clientSearch.Dealerships.Add(id);
+            dealershipSearch.Clients.Add(clientId);
+
+            _clientService.Update(clientId, clientSearch);
+            Update(id, dealershipSearch);
+            content.Content = new StringContent("Record made");
+            content.StatusCode = HttpStatusCode.OK;
+            return content;
         }
     }
 }
