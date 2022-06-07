@@ -55,7 +55,14 @@ namespace ListaCarro.Controllers
         [Route("client")]
         public HttpResponseMessage Register(string id, string clientId)
         {
-            return _dealershipService.Register(id, clientId);
+            return _dealershipService.ClientRegister(id, clientId);
+        }
+
+        [HttpPost]
+        [Route("car")]
+        public HttpResponseMessage CarRegister(string id, string carId)
+        {
+            return _dealershipService.CarRegister(id, carId);
         }
     }
 }

@@ -11,6 +11,7 @@ namespace ListaCarro.Interface
         Dealership Create(Dealership dealership);
         long Update(string id, Dealership dealership);
         long Delete(string id);
-        HttpResponseMessage Register(string id, string clientId);
+        HttpResponseMessage ClientRegister(string id, string clientId);
+        HttpResponseMessage CarRegister(string id, string carId);
     }
 }
